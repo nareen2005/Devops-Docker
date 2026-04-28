@@ -1,0 +1,13 @@
+# Task 10: Create and use Docker network
+
+# List networks
+docker network ls
+
+# Create network
+docker network create mynet
+
+# Run container in network
+docker run -d --name net-container --network mynet nginx
+
+# Inspect network
+docker network inspect mynet

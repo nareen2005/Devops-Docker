@@ -1,0 +1,7 @@
+# Task 5: Enter running container
+
+# List running containers
+docker ps
+
+# Enter container
+docker exec -it <container_id> bash

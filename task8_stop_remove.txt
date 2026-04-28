@@ -1,0 +1,7 @@
+# Task 8: Stop and remove a container
+
+# Stop container
+docker stop <container_id>
+
+# Remove container
+docker rm <container_id>

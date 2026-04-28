@@ -1,0 +1,82 @@
+# Check Docker
+docker --version
+docker info
+
+# Pull Image
+docker pull nginx
+docker pull httpd
+docker pull ubuntu
+
+# List Images
+docker images
+
+# Run Containers
+docker run nginx
+docker run -d nginx
+docker run -it ubuntu bash
+docker run --name mycontainer nginx
+
+# Run with Port Mapping
+docker run -d -p 8080:80 nginx
+docker run -d -p 8080:80 httpd
+
+# List Containers
+docker ps
+docker ps -a
+
+# Stop and Remove
+docker stop <container_id>
+docker rm <container_id>
+
+# Execute inside container
+docker exec -it <container_id> bash
+
+# Environment Variables
+docker run -e MY_NAME=Ayan ubuntu env
+docker run -it -e COLLEGE=CSE ubuntu bash
+echo $COLLEGE
+
+# Multiple Environment Variables
+docker run -e APP_ENV=production -e VERSION=1 nginx
+
+# Using .env file
+docker run --env-file .env nginx
+
+# Volumes
+docker volume create mydata
+docker volume ls
+docker volume inspect mydata
+docker run -dit --name mycontainer -v mydata:/app/data ubuntu
+
+# Copy files
+docker cp file.txt <container_id>:/app
+docker cp <container_id>:/app/file.txt .
+
+# Logs
+docker logs <container_id>
+docker logs -f <container_id>
+
+# Remove Image
+docker rmi <image_id>
+
+# Force Remove Image
+docker rmi -f <image_id>
+
+# Networking
+docker network ls
+docker network create mynet
+docker run --network mynet nginx
+
+# Container Lifecycle
+docker start <container_id>
+docker stop <container_id>
+docker restart <container_id>
+
+# Volume Example
+docker run -d -v mydata:/data nginx
+
+# Apache Example (Mini Project)
+docker pull httpd
+docker run -d --name my-apache -p 8080:80 httpd
+docker exec -it my-apache bash
+echo "<h1>Hello from Docker</h1>" > /usr/local/apache2/htdocs/index.html

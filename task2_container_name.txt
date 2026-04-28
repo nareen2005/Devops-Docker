@@ -1,0 +1,4 @@
+# Task 2: Run nginx container with custom name
+
+docker run -d --name myapp nginx
+docker ps

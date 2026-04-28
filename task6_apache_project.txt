@@ -1,0 +1,13 @@
+# Task 6: Run Apache container and modify webpage
+
+# Pull image
+docker pull httpd
+
+# Run container with port mapping
+docker run -d -p 8080:80 --name my-apache httpd
+
+# Enter container
+docker exec -it my-apache bash
+
+# Modify webpage
+echo "<h1>Hello from Docker Apache!</h1>" > /usr/local/apache2/htdocs/index.html

@@ -1,0 +1,7 @@
+# Task 7: Check logs of a container
+
+# View logs
+docker logs <container_id>
+
+# Follow logs in real-time
+docker logs -f <container_id>

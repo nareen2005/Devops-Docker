@@ -1,0 +1,13 @@
+# Task 4: Create and use Docker volume
+
+# Create volume
+docker volume create mydata
+
+# List volumes
+docker volume ls
+
+# Run container with volume
+docker run -dit --name voltest -v mydata:/data ubuntu
+
+# Check inside container
+docker exec -it voltest ls /data

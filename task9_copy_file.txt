@@ -1,0 +1,7 @@
+# Task 9: Copy files between host and container
+
+# Copy file from host to container
+docker cp file.txt <container_id>:/app
+
+# Copy file from container to host
+docker cp <container_id>:/app/file.txt .

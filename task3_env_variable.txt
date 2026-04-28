@@ -1,0 +1,6 @@
+# Task 3: Run Ubuntu container with environment variable
+
+docker run -it -e COLLEGE=CSE ubuntu bash
+
+# Check variable inside container
+echo $COLLEGE
