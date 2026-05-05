@@ -1,0 +1,22 @@
+# Task 10: Docker Networking
+
+# List existing networks
+docker network ls
+
+# Create a custom network
+docker network create mynet
+
+# Run first container in network
+docker run -d --name container1 --network mynet nginx
+
+# Run second container (interactive)
+docker run -it --name container2 --network mynet alpine sh
+
+# Test communication between containers
+ping container1
+
+# Inspect network
+docker network inspect mynet
+
+This task demonstrates Docker networking by creating a custom network.
+Containers connected to the same network can communicate using container names.

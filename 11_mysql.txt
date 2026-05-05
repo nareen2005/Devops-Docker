@@ -1,0 +1,29 @@
+# Task 11: MySQL Container Setup and Debugging
+
+# Run MySQL container with required environment variables
+docker run -d --name mysql_container \
+-p 3307:3306 \
+-e MYSQL_ROOT_PASSWORD=root123 \
+-e MYSQL_DATABASE=college \
+-e MYSQL_USER=admin \
+-e MYSQL_PASSWORD=admin123 \
+mysql:8
+
+# Check running containers
+docker ps
+
+# View logs
+docker logs mysql_container
+
+# Follow logs in real-time
+docker logs -f mysql_container
+
+# Access container
+docker exec -it mysql_container bash
+
+# Login to MySQL
+mysql -u root -p
+
+
+This task demonstrates running a MySQL container with required environment variables.
+Logs are used to debug issues, and the container is accessed to verify database setup.

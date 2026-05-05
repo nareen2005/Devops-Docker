@@ -1,0 +1,24 @@
+# Task 1: Basic Docker Commands
+
+# Check Docker version
+docker --version
+
+# Display system information
+docker info
+
+# Pull images from Docker Hub
+docker pull nginx
+docker pull httpd
+docker pull ubuntu
+
+# List all images
+docker images
+
+# List running containers
+docker ps
+
+# List all containers
+docker ps -a
+
+
+This file contains all Docker commands practiced during DevOps lab sessions.

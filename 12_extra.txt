@@ -1,0 +1,17 @@
+# Docker Build
+docker build -t myimage .
+docker run -d -p 8080:80 myimage
+
+# Image Layers
+docker history nginx
+
+# Bind Mount
+docker run -d -v $(pwd):/data nginx
+
+# Host Network
+docker run -d --network host nginx
+
+# Docker Hub
+docker login
+docker tag myimage username/myimage
+docker push username/myimage
